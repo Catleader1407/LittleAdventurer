@@ -98,7 +98,7 @@ public class Character : MonoBehaviour
             SwitchStateTo(CharacterState.Slide);
             return;
         }
-            movementVelocity.Set(playerInput.HorizontalInput,0f,playerInput.VerticalInput);
+        movementVelocity.Set(playerInput.HorizontalInput,0f,playerInput.VerticalInput);
         movementVelocity.Normalize();
         movementVelocity = Quaternion.Euler(0, -45f, 0) * movementVelocity;
 
@@ -171,7 +171,7 @@ public class Character : MonoBehaviour
 
         if (isPlayer) 
         {
-            if (characterController.isGrounded == false)
+            if (!characterController.isGrounded)
             {
                 verticalVelocity = gravity;
             }
